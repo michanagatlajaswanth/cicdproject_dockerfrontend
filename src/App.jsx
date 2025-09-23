@@ -196,12 +196,13 @@ function App() {
             message: e.target.message.value
           };
 
-          const response = await fetch("/api/contacts", {
+          const response = await fetch("/api/contacts", {   // 👈 relative path, no localhost
   method: "POST",
-  headers: { "Content-Type": "application/json" },
+  headers: {
+    "Content-Type": "application/json",
+  },
   body: JSON.stringify(formData),
 });
-
 
           if (response.ok) {
             alert("Message sent successfully to database!");
