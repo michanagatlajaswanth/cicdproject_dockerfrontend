@@ -196,13 +196,12 @@ function App() {
             message: e.target.message.value
           };
 
-          const response = await fetch("http://localhost:8081/api/contacts", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          });
+          const response = await fetch("/api/contacts", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
 
           if (response.ok) {
             alert("Message sent successfully to database!");
